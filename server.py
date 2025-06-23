@@ -176,7 +176,7 @@ def submit_application(job_id):
     db.commit()
 
     flash("Your application has been submitted successfully!")
-    return redirect("/student")
+    return redirect("/student/myapplications")
 
 
 @app.route("/student/myapplications")

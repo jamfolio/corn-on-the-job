@@ -63,14 +63,18 @@
   padding: 5px;
   background-color: #b4c273;
   font-weight: bold;
-  width: 150px;
-  height: 100px;
+  width: 130px;
+  height: 130px;
   font-size: 12px;
   text-align: center;
   align-content: center;
   cursor: pointer;
   user-select: none;
   color: #2c3115;
+}
+
+#instructions {
+  font-size:10px;
 }
 
 #preview-img {
