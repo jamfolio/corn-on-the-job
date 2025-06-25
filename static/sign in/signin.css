@@ -152,7 +152,7 @@ a:hover {
 }
 
 /*error messages*/
-form div.incorrect label {
+form.incorrect label {
   background-color: #cf3a4c;
 }
 

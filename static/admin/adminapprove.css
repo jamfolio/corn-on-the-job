@@ -24,7 +24,7 @@
   bottom: 5px;
 }
 
-#deny:hover {
+.deny:hover {
   background-color: rgba(108, 2, 2, 0.934) !important;
   transition: background-color 0.2s;
 }
