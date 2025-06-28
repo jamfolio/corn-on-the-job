@@ -18,6 +18,16 @@
         {{ search_bar(search_type='simple', query=query) }}
 
         <div id="lots-of-postings">
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            <div class="flashes">
+                {% for category, message in messages %}
+                <p class="{{ category }}">{{ message }}</p>
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% endwith %}
             {% for list in data %}
             <div class="postings">
                 <div class="company-info">

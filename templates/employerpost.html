@@ -12,35 +12,38 @@
     {% include "sidebar.html" %}
 
 
-    <form id="main-page" method="post" enctype="multipart/form-data" autocomplete="off">
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        <div class="flashes">
-            {% for message in messages %}
-            <p>{{ message }}</p>
-            {% endfor %}
-        </div>
-        {% endif %}
-        {% endwith %}
-        <div id="post">
-            <input id="job-title" placeholder="Enter your job/position's title" name="job-title" autocomplete="off">
-            <textarea id="job-desc" placeholder="Enter a brief description of the position you are hiring for"
-                name="job-description"></textarea>
-            <div id="job-info">
-                <div id="logo-upload">
-                    <p id="instructions">Upload a logo of your company here. Will be displayed as a 100x100 image.</p>
-                    <img id="preview-img" style="display:none" src="/static/images/placeholder.webp">
-                    <input type="file" id="logo-file" name="logo" accept="image/*">
+    <div id="main-page">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flashes">
+                    {% for category, message in messages %}
+                        <p class="{{ category }}">{{ message }}</p>
+                    {% endfor %}
                 </div>
-                <div id="contact-info">
-                    <input id="company-name" placeholder="Enter company name" name="company" autocomplete="off">
-                    <input type="email" id="email" name="email" placeholder="Enter email to receive applications" autocomplete="off">
+            {% endif %}
+        {% endwith %}
+
+        <form id="post-form" method="post" enctype="multipart/form-data" autocomplete="off">
+            <div id="post">
+                <input id="job-title" placeholder="Enter your job/position's title" name="job-title" autocomplete="off">
+                <textarea id="job-desc" placeholder="Enter a brief description of the position you are hiring for"
+                    name="job-description"></textarea>
+                <div id="job-info">
+                    <div id="logo-upload">
+                        <p id="instructions">Upload a logo of your company here. Will be displayed as a 100x100 image.</p>
+                        <img id="preview-img" style="display:none" src="/static/images/placeholder.webp">
+                        <input type="file" id="logo-file" name="logo" accept="image/*">
+                    </div>
+                    <div id="contact-info">
+                        <input id="company-name" placeholder="Enter company name" name="company" autocomplete="off">
+                        <input type="email" id="email" name="email" placeholder="Enter email to receive applications" autocomplete="off">
+                </div>
+
+                <input id="submit" value="Submit post for review" type="submit">
+
             </div>
-
-            <input id="submit" value="Submit post for review" type="submit">
-
-        </div>
-    </form>
+        </form>
+    </div>
 
 </body>
 <script src="/static/employer/employerpost.js"></script>

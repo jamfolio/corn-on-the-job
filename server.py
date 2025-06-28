@@ -161,7 +161,7 @@ def submit_application(job_id):
             resume_file.save(os.path.join(app.config["UPLOAD_FOLDER"], filename))
             resume_filename = filename
         else:
-            flash("Invalid resume file type. Allowed types are: pdf, doc, docx")
+            flash("Invalid resume file type. Allowed types are: pdf, doc, docx", "error")
             return redirect(request.url)
 
     db = get_db()
@@ -175,7 +175,7 @@ def submit_application(job_id):
     )
     db.commit()
 
-    flash("Your application has been submitted successfully!")
+    flash("Your application has been submitted successfully!", "success")
     return redirect("/student/myapplications")
 
 
@@ -213,7 +213,6 @@ def my_applications():
     )
 
 
-# New route to display saved jobs
 @app.route("/student/saved")
 def saved_jobs():
     if "user_id" not in session or session["user_type"] != "student":
@@ -246,7 +245,6 @@ def saved_jobs():
     return render_template("saveds.html", data=data, query=job_query, sort=sort_by)
 
 
-# New API endpoint to save a job
 @app.route("/student/save/<int:job_id>", methods=["POST"])
 def save_job(job_id):
     if "user_id" not in session or session["user_type"] != "student":
@@ -261,13 +259,10 @@ def save_job(job_id):
         db.commit()
         return jsonify({"success": True})
     except sqlite3.IntegrityError:
-        # This error occurs if the job is already saved, which is fine.
         return jsonify({"success": True})
     except Exception as e:
         return jsonify({"success": False, "error": str(e)}), 500
 
-
-# New API endpoint to unsave a job
 @app.route("/student/unsave/<int:job_id>", methods=["POST"])
 def unsave_job(job_id):
     if "user_id" not in session or session["user_type"] != "student":
@@ -355,7 +350,7 @@ def go_employ():
 @app.route("/employer/post", methods=["POST"])
 def employer_post():
     if "user_id" not in session or session["user_type"] != "employer":
-        flash("You must be logged in as an employer to post a job.")
+        flash("You must be logged in as an employer to post a job.", "error")
         return redirect("/signin")
 
     job_title = request.form.get("job-title")
@@ -372,7 +367,7 @@ def employer_post():
             logo_file.save(os.path.join("static/images", filename))
             file_name = filename
         else:
-            flash("Invalid logo file type. Allowed types are: png, jpg, jpeg, gif")
+            flash("Invalid logo file type. Allowed types are: png, jpg, jpeg, gif", "error")
             return redirect(request.url)
 
     db = get_db()
@@ -390,13 +385,13 @@ def employer_post():
         )
         db.commit()
         flash(
-            "Your job posting has been submitted for review and will be public once approved."
+            "Your job posting has been submitted for review and will be public once approved.", "success"
         )
     except Exception as e:
-        flash(f"An error occurred: {e}")
+        flash(f"An error occurred: {e}", "error")
         db.rollback()
 
-    return render_template("employerpost.html")
+    return redirect("/employer/mypostings")
 
 
 @app.route("/employer/mypostings")
@@ -541,7 +536,7 @@ def admin_review():
 def deny_job():
 
     if "user_id" not in session or session["user_type"] != "admin":
-        flash("You do not have permission to perform this action.")
+        flash("You do not have permission to perform this action.", "error")
         return redirect("/signin")
 
     post_id = request.form.get("deny-id")
@@ -550,11 +545,11 @@ def deny_job():
         cursor = get_db().execute("DELETE FROM JOBS WHERE ID=?", (post_id,))
         if cursor.rowcount > 0:
             get_db().commit()
-            flash("Job denied and deleted successfully!")
+            flash("Job denied and deleted successfully!", "success")
         else:
-            flash("Job not found or could not be denied.")
+            flash("Job not found or could not be denied.", "error")
     else:
-        flash("No job ID provided for denial.")
+        flash("No job ID provided for denial.", "error")
 
     return redirect("/admin/review")
 
@@ -563,7 +558,7 @@ def deny_job():
 def approve_job():
 
     if "user_id" not in session or session["user_type"] != "admin":
-        flash("You do not have permission to perform this action.")
+        flash("You do not have permission to perform this action.", "error")
         return redirect("/signin")
 
     post_id = request.form.get("approve-id")
@@ -574,9 +569,9 @@ def approve_job():
             (post_id,),
         )
         get_db().commit()
-        flash("Job approved successfully!")
+        flash("Job approved successfully!", "success")
     else:
-        flash("No job ID provided for approval.")
+        flash("No job ID provided for approval.", "error")
 
     return redirect("/admin/review")
 
