@@ -23,7 +23,7 @@
 .metric-box {
       background-image: linear-gradient(to right,
       rgb(239, 226, 155),
-      rgb(202, 227, 180));
+      rgb(173, 202, 152));
     border: #70821f 3px solid;
     border-radius: 15px;
     padding: 20px;
@@ -59,7 +59,7 @@
 .info-card {
       background-image: linear-gradient(to right,
       rgb(239, 226, 155),
-      rgb(202, 227, 180));
+      rgb(173, 202, 152));
     border: #70821f 3px solid;
     border-radius: 15px;
     padding: 20px;
@@ -157,14 +157,14 @@
     font-size: 1.2em;
     font-weight: bold;
     color: #2c3115;
-    background-color: #b4c273;
+    background-color: #95b979;
     border: 3px solid #70821f;
     transition: all 0.2s ease;
     text-align: center;
 }
 
 .action-button:hover {
-    background-color: #a3b165 !important;
+    background-color: #739966 !important;
     transform: translateY(-3px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }

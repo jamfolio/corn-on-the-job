@@ -29,7 +29,7 @@ button:hover {
 }
 
 #logo {
-  width: 50%;
+  width: 70%;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
@@ -38,7 +38,7 @@ button:hover {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  background-color: rgba(245, 228, 135, 0.85); 
+  background-color: rgba(202, 191, 128, 0.85); 
   margin-left: 270px;
   width: calc(100% - 270px);
   transition: all 0.4s ease;
@@ -70,7 +70,7 @@ button:hover {
   height: 44px;
   flex-grow: 1;
   max-width: 600px;
-  background-image: linear-gradient(to right, rgb(245, 228, 135), rgba(164, 206, 113, 0.653));
+  background-image: linear-gradient(to right, rgb(173, 202, 152), rgb(239, 226, 155));
   border: 3px solid #43621a;
   border-radius: 15px;
   padding: 0 15px;
@@ -105,7 +105,7 @@ button:hover {
   height: 44px;
   border: 3px solid #43621a;
   border-radius: 10px;
-  background-color: #f5e487;
+  background-color: #c0db9a;
   color: #2c3115;
   font-weight: bold;
   cursor: pointer;
@@ -138,7 +138,7 @@ button:hover {
   display: flex;
   background-image: linear-gradient(to right,
       rgb(239, 226, 155),
-      rgb(202, 227, 180));
+      rgb(173, 202, 152));
   border: rgb(87, 130, 87) solid 3px;
   width: 100%;
   max-width: 850px;
@@ -160,11 +160,16 @@ button:hover {
 }
 
 .apply {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
   width: 150px;
   height: 38px;
-  border: 3px solid #70821fc2;
+  border: 3px solid #43621a;
   border-radius: 10px;
-  background-color: #a3b165;
+  background-color: #89ab6f;
   margin-bottom: 10px;
   font-size: large;
   font-weight: bold;
@@ -172,10 +177,14 @@ button:hover {
   right: 45px;
   bottom: 5px;
   color: #2c3115;
+  transition: all 0.2s ease;
+  text-align: center;
 }
 
 .apply:hover {
-  background-color: #394e22;
+  background-color: #394e22 !important;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .job-desc {
@@ -223,7 +232,7 @@ button:hover {
   top: 0;
   left: 0;
   border-radius: 0 16px 16px 0;
-  border: 3px solid #f5e487;
+  border: 2px solid #70821f;
   border-left: none;
   background: linear-gradient(to bottom,
       rgb(87, 130, 87),
@@ -299,7 +308,8 @@ button:hover {
 .sidebar-header .toggler {
   height: 35px;
   width: 35px;
-  border: none;
+  border-width: 10;
+  border: 2px solid #43621a;
   color: #151A2D;
   display: flex;
   align-items: center;
@@ -453,12 +463,12 @@ button:hover {
 }
 
 .flashes .success {
-    background-color: #d4edda;
-    color: #155724;
-    border: 1px solid #c3e6cb;
+    background-color: #9fc588;
+    color: #2b4129;
+    border: 2px solid #2b4129;
     padding: 10px;
     margin-bottom: 10px;
-    border-radius: 5px;
+    border-radius: 8px;
 }
 
 .flashes .error {
@@ -473,7 +483,7 @@ button:hover {
 .save-button {
   width: 120px;
   height: 38px;
-  border: 3px solid #70821fc2;
+  border: 3px solid #43621a;
   border-radius: 10px;
   background-color: transparent;
   font-size: large;
@@ -490,17 +500,17 @@ button:hover {
 }
 
 .save-button:hover {
-  background-color: #e0e0d1 !important;
+  background-color: #61794e !important;
 }
 
 .save-button.saved {
-  background-color: #f5e487;
-  border-color: #e2a000;
-  color: #614d00;
+  background-color: #cccc6c;
+  border-color: #7f8438;
+  color: #434619;
 }
 
 .save-button.saved:hover {
-  background-color: #e6d577 !important;
+  background-color: #918c49 !important;
 }
 
 .save-button .material-symbols-rounded {
