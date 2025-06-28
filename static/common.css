@@ -138,7 +138,7 @@ button:hover {
   display: flex;
   background-image: linear-gradient(to right,
       rgb(239, 226, 155),
-      rgb(194, 216, 175));
+      rgb(202, 227, 180));
   border: rgb(87, 130, 87) solid 3px;
   width: 100%;
   max-width: 850px;
@@ -230,7 +230,7 @@ button:hover {
       rgb(210, 215, 140));
   height: 100vh;
   transition: width 0.4s ease;
-  overflow: hidden;
+  overflow-x: hidden;
   z-index: 100;
 }
 
