@@ -9,9 +9,10 @@ html, body {
   font-family: Arial, Helvetica, sans-serif;
   min-height: 100vh;
   height: 100%;
-  background-image: linear-gradient(to right,
-      rgb(245, 228, 135),
-      rgba(234, 232, 172, 0.132));
+  background-image: url('/static/images/cornfield.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   overflow-x: hidden !important;
   width: 100%;
 }
@@ -37,9 +38,7 @@ button:hover {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  background-image: linear-gradient(to right,
-      rgb(245, 228, 135),
-      rgba(71, 106, 71, 0.578));
+  background-color: rgba(245, 228, 135, 0.85); 
   margin-left: 270px;
   width: calc(100% - 270px);
   transition: all 0.4s ease;
@@ -51,6 +50,7 @@ button:hover {
   margin-left: 85px;
   width: calc(100% - 85px);
 }
+
 
 #searchbar-holder {
   background-image: linear-gradient(to right,
@@ -138,7 +138,7 @@ button:hover {
   display: flex;
   background-image: linear-gradient(to right,
       rgb(245, 228, 135),
-      rgba(234, 232, 172, 0.132));
+      rgb(234, 232, 172));
   border: rgb(87, 130, 87) solid 3px;
   width: 100%;
   max-width: 850px;

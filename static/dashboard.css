@@ -21,7 +21,7 @@
 }
 
 .metric-box {
-    background-image: linear-gradient(to right, rgb(245, 228, 135), rgba(234, 232, 172, 0.132));
+    background-image: linear-gradient(to right, rgb(245, 228, 135), rgb(234, 232, 172));
     border: #70821f 3px solid;
     border-radius: 15px;
     padding: 20px;
@@ -55,7 +55,7 @@
 }
 
 .info-card {
-    background-image: linear-gradient(to right, rgb(245, 228, 135), rgba(234, 232, 172, 0.132));
+    background-image: linear-gradient(to right, rgb(245, 228, 135), rgb(234, 232, 172));
     border: #70821f 3px solid;
     border-radius: 15px;
     padding: 20px;
