@@ -137,8 +137,8 @@ button:hover {
   margin-top: 10px;
   display: flex;
   background-image: linear-gradient(to right,
-      rgb(245, 228, 135),
-      rgb(234, 232, 172));
+      rgb(239, 226, 155),
+      rgb(194, 216, 175));
   border: rgb(87, 130, 87) solid 3px;
   width: 100%;
   max-width: 850px;
@@ -180,11 +180,12 @@ button:hover {
 
 .job-desc {
   overflow-y: auto;
+  font-size: large;
   color: #2c3115;
 }
 
 .job-title {
-  font-size: large;
+  font-size: larger;
   font-weight: bold;
   color: #2c3115;
 }
