@@ -3,13 +3,19 @@
   src: url(/static/fonts/soopafre.ttf);
 }
 
+* {
+  outline: none;
+}
+
 html, body {
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
   min-height: 100vh;
   height: 100%;
-  background-image: url('/static/images/cornfield.jpg');
+  background-image:
+    linear-gradient(0deg, rgba(202, 191, 128, 0.85), rgba(202, 191, 128, 0.85)),
+    url('/static/images/cornfield.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -23,9 +29,10 @@ button:hover {
 }
 
 #cotj {
-  font-size: 25px;
-  color: #2c3115;
+  font-size: 50px;
+  color: #17351c;
   font-family: "soopafresh", sans-serif;
+  margin-right: 100%; 
 }
 
 #logo {
@@ -38,7 +45,6 @@ button:hover {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  background-color: rgba(202, 191, 128, 0.85); 
   margin-left: 270px;
   width: calc(100% - 270px);
   transition: all 0.4s ease;
@@ -279,11 +285,11 @@ button:hover {
 
 .sidebar-brand {
   display: flex;
-  align-items: center;
-  gap: 2px;
+  align-items: baseline;
+  gap: 10px;
   font-weight: bold;
-  font-size: 17px;
-  color: #2c3115;
+  font-size: 20px;
+  color: #233d29;
   white-space: nowrap;
   overflow: hidden;
   flex-grow: 1;
@@ -300,12 +306,12 @@ button:hover {
   opacity: 0;
 }
 
-.sidebar-header .header-logo img {
+/*.sidebar-header .header-logo img {
   min-width: 40px;
   height: 40px;
   display: block;
   object-fit: contain;
-}
+}*/
 
 .sidebar-header .toggler {
   height: 35px;
@@ -421,6 +427,7 @@ button:hover {
   flex-direction: column;
   height: 100%;
   position: relative;
+  overflow-x: hidden;
   overflow-y: hidden;
   justify-content: space-between;
 }

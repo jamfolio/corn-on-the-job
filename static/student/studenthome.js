@@ -3,8 +3,6 @@ const sidebarToggler = document.querySelector(".sidebar-toggler");
 const menuToggler = document.querySelector(".menu-toggler");
 const fullSidebarHeight = "calc(100vh - 32px)"
 
-const collapsedSidebarHeight = "56px";
-
 // toggle sidebar's collapsed state
 sidebarToggler.addEventListener("click", () => {
   sidebar.classList.toggle("collapsed");
@@ -23,13 +21,8 @@ menuToggler.addEventListener("click", () => {
 
 // adjust sidebar height on window resize
 window.addEventListener("resize", () => {
-  if (window.innerWidth >= 1024) {
-    // sidebar.style.height = fullSidebarHeight;
-  } else {
-    sidebar.classList.remove("collapsed");
-    sidebar.style.height = "auto";
-    toggleMenu(sidebar.classList.contains("menu-active"));
-  }
+  sidebar.classList.toggle("collapsed", window.innerWidth < 1024);
+  toggleMenu(sidebar.classList.contains("menu-active"));
 });
 
 
