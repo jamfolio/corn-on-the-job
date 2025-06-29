@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, g, session, flash, jsonify
+from flask import Flask, render_template, request, redirect, g, session, flash, jsonify, url_for
 import sqlite3
 import os
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -25,6 +25,7 @@ def get_db():
     db = getattr(g, "_database", None)
     if db is None:
         db = g._database = sqlite3.connect("main.db")
+        db.row_factory = sqlite3.Row 
     return db
 
 
@@ -424,6 +425,36 @@ def my_postings():
         "employermypostings.html", data=data, query=job_query, filter=job_filter
     )
 
+@app.route("/employer/viewapplications")
+def view_applications():
+    if "user_id" not in session or session["user_type"] != "employer":
+        flash("You must be logged in as an employer to view applications.", "error")
+        return redirect("/signin")
+
+    user_id = session["user_id"]
+    sort_by = request.args.get('sort', 'newest')
+    db = get_db()
+
+    cursor = db.execute("SELECT ID, JOB_TITLE FROM JOBS WHERE USER_ID = ? ORDER BY ID DESC", (user_id,))
+    jobs = cursor.fetchall()
+
+    jobs_with_applications = {}
+    for job in jobs:
+        order_clause = "ORDER BY a.ID DESC" if sort_by == 'newest' else "ORDER BY a.ID ASC"
+        
+        app_cursor = db.execute(f"""
+            SELECT u.username, a.experience_summary, a.phone_number, a.contact_email, a.resume_filename
+            FROM APPLICATIONS a
+            JOIN USERS u ON a.user_id = u.ID
+            WHERE a.job_id = ?
+            {order_clause}
+        """, (job['ID'],))
+        applications = app_cursor.fetchall()
+        
+        jobs_with_applications[job] = applications
+
+    return render_template("employerviewapplications.html", jobs_with_applications=jobs_with_applications, sort=sort_by)
+
 
 @app.route("/admin")
 def admin_home():
@@ -592,10 +623,10 @@ def get_in():
             "SELECT * FROM USERS WHERE username = ?", (username,)
         ).fetchone()
 
-        if user and check_password_hash(user[2], password):
-            session["user_id"] = user[0]
-            session["username"] = user[1]
-            session["user_type"] = user[3]
+        if user and check_password_hash(user["password"], password):
+            session["user_id"] = user["ID"]
+            session["username"] = user["username"]
+            session["user_type"] = user["user_type"]
 
             if session["user_type"] == "student":
                 return redirect("/student/dashboard")

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Applications - Corn on the Job</title>
+    {% include "common_head.html" %}
+    <link href="/static/employer/employerviewapplications.css" rel="stylesheet">
+</head>
+<body>
+    {% from "sidebar.html" import search_bar %}
+    {% include "sidebar.html" %}
+
+    <div id="main-page">
+        {{ search_bar(search_type='sort', sort=sort, action=url_for('view_applications'), placeholder='Search applications...') }}
+
+        <h2 class="page-title">Student Applications</h2>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flashes">
+                    {% for category, message in messages %}
+                        <p class="{{ category }}">{{ message }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <div id="applications-container">
+            {% if jobs_with_applications %}
+                {% for job, applications in jobs_with_applications.items() %}
+                    <div class="job-posting-section">
+                        <h3 class="job-title-header">{{ job.JOB_TITLE }}</h3>
+                        {% if applications %}
+                            <ul class="application-list">
+                                {% for app in applications %}
+                                    <li class="application-item">
+                                        <div class="applicant-info">
+                                            <p><strong>Applicant:</strong> {{ app.username }}</p>
+                                            <p><strong>Contact:</strong> {{ app.contact_email }} | {{ app.phone_number }}</p>
+                                            <p><strong>Experience Summary:</strong> {{ app.experience_summary }}</p>
+                                        </div>
+                                        <div class="application-actions">
+                                            {% if app.resume_filename %}
+                                                <a href="{{ url_for('static', filename='resumes/' + app.resume_filename) }}" class="resume-link" target="_blank">View Resume</a>
+                                            {% else %}
+                                                <span class="no-resume">No Resume Submitted</span>
+                                            {% endif %}
+                                        </div>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        {% else %}
+                            <p class="no-applications">No applications for this job yet.</p>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p class="no-applications">You have no job postings with applications.</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

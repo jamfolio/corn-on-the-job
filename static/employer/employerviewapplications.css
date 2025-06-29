@@ -1,0 +1,99 @@
+#main-page {
+    padding: 25px;
+}
+
+#searchbar-holder {
+    margin-bottom: 25px;
+}
+
+.page-title {
+    color: #2c3115;
+    font-size: 2.2em;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+#applications-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.job-posting-section {
+    background-image: linear-gradient(to right, rgb(239, 226, 155), rgb(173, 202, 152));
+    border: #70821f 3px solid;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.job-title-header {
+    color: #394e22;
+    font-size: 1.8em;
+    border-bottom: 2px solid #a3b165;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.application-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.application-item {
+    padding: 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.application-item:last-child {
+    border-bottom: none;
+}
+
+.applicant-info p {
+    margin: 5px 0;
+    color: #2c3115;
+}
+
+.applicant-info p strong {
+    color: #394e22;
+}
+
+.resume-link {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #2c3115;
+    background-color: #95b979;
+    border: 2px solid #70821f;
+    transition: all 0.2s ease;
+}
+
+.resume-link:hover {
+    background-color: #739966 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.no-resume {
+    color: #70821f;
+    font-style: italic;
+}
+
+.no-applications {
+    color: #70821f;
+    font-style: italic;
+    padding: 15px;
+    text-align: center;
+}
+
+.flashes {
+    width: 100%;
+    margin: 0 0 20px 0;
+}

@@ -30,8 +30,7 @@
     <header class="sidebar-header">
         <div class="sidebar-brand">
             <a href="/student/dashboard" class="header-logo">
-                <!--<img src="/static/images/corn.png" id="logo">-->
-            </a>
+                </a>
             <p class="nav-label">Corn on the Job</p>
         </div>
         <button class="toggler sidebar-toggler">
@@ -152,6 +151,16 @@
                     <span class="nav-label">My Postings</span>
                 </a>
                 <span class="nav-tooltip">My Postings</span>
+            </li>
+            {% endif %}
+            
+            {% if request.path != "/employer/viewapplications" %}
+            <li class="nav-item">
+                <a href="/employer/viewapplications" class="nav-link">
+                    <span class="nav-icon material-symbols-rounded">person_search</span>
+                    <span class="nav-label">View Applications</span>
+                </a>
+                <span class="nav-tooltip">View Applications</span>
             </li>
             {% endif %}
 
