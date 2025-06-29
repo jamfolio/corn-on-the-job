@@ -1,22 +1,8 @@
-#main-page {
-    padding: 25px;
-}
-
-#searchbar-holder {
-    margin-bottom: 25px;
-}
-
-.page-title {
-    color: #2c3115;
-    font-size: 2.2em;
-    font-weight: bold;
-    margin-bottom: 25px;
-}
-
 #applications-container {
     display: flex;
     flex-direction: column;
     gap: 25px;
+    padding: 25px;
 }
 
 .job-posting-section {

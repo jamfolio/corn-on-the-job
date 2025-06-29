@@ -12,7 +12,6 @@
     <div id="main-page">
         {{ search_bar(search_type='sort', sort=sort, action=url_for('view_applications'), placeholder='Search applications...') }}
 
-        <h2 class="page-title">Student Applications</h2>
 
         {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
@@ -35,8 +34,8 @@
                                     <li class="application-item">
                                         <div class="applicant-info">
                                             <p><strong>Applicant:</strong> {{ app.username }}</p>
-                                            <p><strong>Contact:</strong> {{ app.contact_email }} | {{ app.phone_number }}</p>
-                                            <p><strong>Experience Summary:</strong> {{ app.experience_summary }}</p>
+                                            <p><strong>Contact:</strong> {% if app.contact_email %}{{ app.contact_email }}{% else %}<span class="no-resume">No Email Submitted</span>{% endif %} | {% if app.phone_number %}{{ app.phone_number }}{% else %}<span class="no-resume">No Phone Number Submitted</span>{% endif %}</p>
+                                            <p><strong>Experience Summary:</strong> {% if app.experience_summary %}{{ app.experience_summary }}{% else %}<span class="no-resume">No Experience Summary Submitted</span>{% endif %}</p>
                                         </div>
                                         <div class="application-actions">
                                             {% if app.resume_filename %}
@@ -59,4 +58,6 @@
         </div>
     </div>
 </body>
+
+<script src="/static/student/studenthome.js"></script>
 </html>
