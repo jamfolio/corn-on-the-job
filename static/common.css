@@ -77,9 +77,10 @@ button:hover {
   flex-grow: 1;
   max-width: 600px;
   background-image: linear-gradient(to right, rgb(173, 202, 152), rgb(239, 226, 155));
-  border: 3px solid #43621a;
+  border: none; /*3px solid #43621a;*/
   border-radius: 15px;
   padding: 0 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .search-input-container i {
@@ -147,13 +148,14 @@ button:hover {
   background-image: linear-gradient(to right,
       rgb(239, 226, 155),
       rgb(173, 202, 152));
-  border: rgb(87, 130, 87) solid 3px;
+  /*border: rgb(87, 130, 87) solid 3px;*/
   width: 100%;
   max-width: 850px;
   height: 280px;
   border-radius: 15px;
   padding: 10px;
   position: relative;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .company-info {
@@ -175,7 +177,7 @@ button:hover {
   padding: 20px;
   width: 120px;
   height: 8px;
-  border: 3px solid #43621a;
+  border: none; /*3px solid #43621a;*/
   border-radius: 10px;
   background-color: #89ab6f;
   margin-bottom: 10px;
@@ -187,6 +189,7 @@ button:hover {
   color: #2c3115;
   transition: all 0.2s ease;
   text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .apply:hover {
@@ -240,7 +243,7 @@ button:hover {
   top: 0;
   left: 0;
   border-radius: 0 0 16px 0;
-  border: 2px solid #70821f;
+  /*border: 2px solid #70821f;*/
   border-left: none;
   background: linear-gradient(to bottom,
       rgb(87, 130, 87),
@@ -249,6 +252,8 @@ button:hover {
   transition: width 0.4s ease;
   overflow-x: hidden;
   z-index: 100;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+
 }
 
 .sidebar.collapsed {
@@ -317,7 +322,7 @@ button:hover {
   height: 35px;
   width: 35px;
   border-width: 10;
-  border: 2px solid #43621a;
+  border: hidden;
   color: #151A2D;
   display: flex;
   align-items: center;
@@ -481,7 +486,7 @@ button:hover {
 }
 
 .flashes .error {
-    background-color: #f8d7da;
+    background-color: #cdba92;
     color: #721c24;
     border: 1px solid #f5c6cb;
     padding: 10px;
@@ -492,9 +497,9 @@ button:hover {
 .save-button {
   width: 120px;
   height: 38px;
-  border: 3px solid #43621a;
+  border: none; /*3px solid #43621a;*/
   border-radius: 10px;
-  background-color: transparent;
+  background-color: rgb(190, 211, 127);
   font-size: large;
   font-weight: bold;
   position: absolute;
@@ -507,6 +512,7 @@ button:hover {
   justify-content: center;
   padding: 20px;
   gap: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .save-button:hover {
@@ -517,8 +523,7 @@ button:hover {
 
 .save-button.saved {
   background-color: #cccc6c;
-  border-color: #7f8438;
-  color: #434619;
+  border: none; /* #7f8438; #434619;*/
 }
 
 .save-button.saved:hover {

@@ -24,7 +24,7 @@
     background-image: linear-gradient(to right,
       rgb(239, 226, 155),
       rgb(173, 202, 152));
-    border: #70821f 3px solid;
+    border: none; /*#70821f 3px solid*/
     border-radius: 15px;
     padding: 20px;
     display: flex;
@@ -33,7 +33,7 @@
     justify-content: center;
     min-width: 200px;
     flex: 1;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     text-align: center;
 }
 
@@ -60,7 +60,7 @@
       background-image: linear-gradient(to right,
       rgb(239, 226, 155),
       rgb(173, 202, 152));
-    border: #70821f 3px solid;
+    border: none; /*#70821f 3px solid;*/
     border-radius: 15px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -157,14 +157,14 @@
     font-size: 1.2em;
     font-weight: bold;
     color: #2c3115;
-    background-color: #95b979;
-    border: 3px solid #70821f;
+    background-color: #739966;
+    border: none; /*3px solid #70821f;*/
     transition: all 0.2s ease;
     text-align: center;
 }
 
 .action-button:hover {
-    background-color: #739966 !important;
+    background-color: #85b276 !important;
     transform: translateY(-3px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
