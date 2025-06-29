@@ -7,6 +7,7 @@
 
     <link href="/static/student/studenthome.css" rel="stylesheet">
     <link href="/static/admin/adminhome.css" rel="stylesheet">
+    <link href="/static/admin/modal.css" rel="stylesheet">
 </head>
 
 <body>
@@ -29,9 +30,9 @@
                     <p class="job-title">{{list[1]}}</p>
                     <p class="job-desc">{{list[2]}}</p>
 
-                    <form class="delete-post" action="/admin/delete" method="POST" onsubmit="return confirmDeletion()">
-                        <button class="delete">Delete posting</button>
+                    <form class="delete-post" action="/admin/delete" method="POST">
                         <input type="hidden" name="post-id" value="{{list[0]}}">
+                        <button type="button" class="delete" onclick="showConfirmModal(this)">Delete posting</button>
                     </form>
                 </div>
             </div>
@@ -39,8 +40,17 @@
         </div>
     </div>
 
+    <div id="confirm-modal" class="confirm-modal">
+        <div class="confirm-modal-content">
+            <p>Are you sure you want to delete this post? This action cannot be undone.</p>
+            <div class="confirm-modal-buttons">
+                <button id="confirm-delete-btn">Delete</button>
+                <button id="cancel-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
 
 </body>
 <script src="/static/student/studenthome.js"></script>
-
+<script src="/static/admin/admin.js"></script>
 </html>
