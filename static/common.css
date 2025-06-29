@@ -115,6 +115,8 @@ button:hover {
 #search-button:hover {
   background-color: #394e22 !important;
   color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 #lots-of-postings {
@@ -165,8 +167,8 @@ button:hover {
   align-items: center;
   justify-content: center;
   padding: 20px;
-  width: 150px;
-  height: 38px;
+  width: 120px;
+  height: 8px;
   border: 3px solid #43621a;
   border-radius: 10px;
   background-color: #89ab6f;
@@ -496,11 +498,14 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 20px;
   gap: 5px;
 }
 
 .save-button:hover {
   background-color: #61794e !important;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .save-button.saved {
