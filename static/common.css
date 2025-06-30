@@ -29,14 +29,15 @@ button:hover {
 }
 
 #cotj {
-  font-size: 50px;
+  font-size: 40px;
   color: #17351c;
   font-family: "soopafresh", sans-serif;
-  margin-right: 100%; 
-}
-
-#logo {
-  width: 70%;
+  margin-left: 0;
+  flex-grow: 1;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
@@ -280,12 +281,13 @@ button:hover {
 
 .sidebar-header {
   display: flex;
-  padding-top: 10px;
-  padding: 20px 0;
   align-items: center;
-  transition: all 0.4s ease;
-  justify-content: center;
-  text-align: center;
+  justify-content: space-between;
+  padding-left: none;
+  padding-right: 10px;
+  height: 100px;
+  width: 100%;
+  box-sizing: border-box;  
 }
 
 .sidebar-brand {
@@ -301,7 +303,6 @@ button:hover {
 }
 
 .sidebar-brand .nav-label {
-  max-width: 150px;
   transition: opacity 0.3s ease, max-width 0.4s ease;
 }
 
@@ -324,7 +325,7 @@ button:hover {
   border: hidden;
   color: #151A2D;
   display: flex;
-  align-items: center;
+  align-items: right;
   justify-content: center;
   cursor: pointer;
   border-radius: 8px;
