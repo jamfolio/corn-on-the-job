@@ -1,7 +1,7 @@
 .approved {
   width: 150px;
   height: 38px;
-  border: 3px solid #70821fc2;
+  border: 1px solid #70821fc2;
   border-radius: 10px;
   background-color: #a3b165;
   margin-bottom: 10px;
@@ -19,9 +19,9 @@
 .pending {
   width: 150px;
   height: 38px;
-  border: 3px solid #d35400;
+  border: 1px solid #d29e7b;
   border-radius: 10px;
-  background-color: #f39c12;
+  background-color: #e1d97d;
   margin-bottom: 10px;
   font-size: 17px;
   font-weight: bold;

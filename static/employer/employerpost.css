@@ -24,6 +24,11 @@ html, body {
     justify-content: center;
 }
 
+.fields {
+  display: flex;
+  flex-direction: column;
+}
+
 #post {
   display: flex;
   flex-direction: column;
@@ -45,7 +50,7 @@ html, body {
   border-radius: 10px;
   border: 1px solid #70821f;
   padding: 12px;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(246, 248, 243, 0.559);
   color: #2c3115;
 }
 

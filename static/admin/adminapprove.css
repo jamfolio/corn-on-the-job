@@ -1,8 +1,9 @@
 .approve {
   width: 175px;
-  border: #4f603a 3px solid;
+  height: 40px;
+  border: #4f603a 1px solid;
   border-radius: 10px;
-  background-color: #a5b65c;
+  background-color: #7bab6f;
   margin-bottom: 10px;
   font-size: large;
   font-weight: bold;
@@ -11,9 +12,17 @@
   bottom: 5px;
 }
 
+.approve:hover {
+  background-color: rgba(75, 100, 70, 0.934) !important;
+  transition: background-color 0.2s;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
 .deny {
   width: 175px;
-  border: 3px solid rgb(120, 55, 44);
+  height: 40px;
+  border: 1px solid rgb(209, 104, 72);
   border-radius: 10px;
   background-color: rgba(184, 105, 69, 0.959);
   margin-bottom: 10px;
@@ -27,6 +36,8 @@
 .deny:hover {
   background-color: rgba(108, 2, 2, 0.934) !important;
   transition: background-color 0.2s;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 #none-text {

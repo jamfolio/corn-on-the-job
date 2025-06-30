@@ -7,10 +7,10 @@
 
 .job-posting-section {
     background-image: linear-gradient(to right, rgb(239, 226, 155), rgb(173, 202, 152));
-    border: #70821f 3px solid;
+    border: none;
     border-radius: 15px;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .job-title-header {
