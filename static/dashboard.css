@@ -157,14 +157,14 @@
     font-size: 1.2em;
     font-weight: bold;
     color: #2c3115;
-    background-color: #739966;
+    background-color: #85b276;
     border: none; /*3px solid #70821f;*/
     transition: all 0.2s ease;
     text-align: center;
 }
 
 .action-button:hover {
-    background-color: #85b276 !important;
+    background-color: #739966 !important;
     transform: translateY(-3px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }

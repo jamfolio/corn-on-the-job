@@ -16,7 +16,7 @@
   background-image: linear-gradient(to right,
       rgb(239, 226, 155),
       rgb(173, 202, 152));
-  border: #70821f 3px solid;
+  border: none;
   border-radius: 15px;
   width: 90%;
   max-width: 600px;
@@ -25,21 +25,24 @@
   position: relative;
   flex-direction: column;
   gap: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 #job-title {
   font-size: large;
   font-weight: bold;
   color: #2c3115;
-  background-color: #9db968;
+  background-color: #86b076a5;
   border-radius: 10px;
-  border: #70821f 3px solid;
+  border: #70821f 1px solid;
   padding: 5px;
 }
 
+/*#97ad5ca5*/
+
 #applicant-exp {
   border-radius: 10px;
-  border: #70821f 3px solid;
+  border: #70821f 1px solid;
   padding: 5px;
   height: 100px;
   font-family: Arial, Helvetica, sans-serif;
@@ -57,9 +60,9 @@
 
 #resume-upload {
   border-radius: 10px;
-  border: #70821f 3px solid;
+  border: #70821f 1px solid;
   padding: 5px;
-  background-color: #9db968;
+  background-color: #86b076a5;
   font-weight: bold;
   color: #2c3115;
 }
@@ -88,9 +91,9 @@
   align-self: flex-end;
   width: 100%;
   max-width: 150px;
-  border: 3px solid #70821f;
+  border: 1px solid #70821f;
   border-radius: 10px;
-  background-color: #9db968;
+  background-color: #d1d480e1;
   margin-bottom: 10px;
   font-size: large;
   font-weight: bold;
