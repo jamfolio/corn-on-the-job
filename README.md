@@ -1,7 +1,7 @@
 # 🌽 Corn on the Job
 
 ## Developers
-Developed by **Jamie Sipes & Van Din** at Ruston High School Chapter #617 for the 2025 FBLA Website Coding & Development competition. Won 1st place at the state level and qualified for the national competition.
+Developed by Jamie Mande & Van Din for FBLA Chapter #617 to participate in the 2025 FBLA Website Coding & Development competition. Won 1st place at the state level and qualified for the national competition.
 
 ## About The Project
 COTJ supports three user roles: students looking for work, employers posting jobs, and admins moderating the platform. Students can browse listings, submit applications with resumes, and track their history. Employers manage postings and review applicants. Admins approve or deny listings before they go live.
